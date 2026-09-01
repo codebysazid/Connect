@@ -5,60 +5,41 @@
     android:layout_height="match_parent"
     android:background="@drawable/widget_calc_background"
     android:orientation="vertical"
-    android:padding="8dp">
+    android:padding="10dp">
 
     <!-- ==================== DISPLAY AREA ==================== -->
     <LinearLayout
         android:id="@+id/calc_display_container"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.1"
+        android:layout_weight="1.5"
         android:background="@drawable/widget_calc_display_bg"
+        android:gravity="bottom|end"
         android:orientation="vertical"
         android:paddingHorizontal="12dp"
-        android:paddingVertical="6dp"
+        android:paddingVertical="8dp"
         android:layout_marginBottom="6dp">
 
-        <!-- Top Header Line: Mode Tag + Expression History -->
-        <LinearLayout
+        <!-- Expression History Line -->
+        <TextView
+            android:id="@+id/txt_calc_expression"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="DEG"
-                android:textColor="@color/calc_display_expr"
-                android:textSize="9sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/txt_calc_expression"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="6dp"
-                android:ellipsize="start"
-                android:gravity="end"
-                android:maxLines="1"
-                android:singleLine="true"
-                android:text=""
-                android:textColor="@color/calc_display_expr"
-                android:textSize="12sp" />
-        </LinearLayout>
+            android:ellipsize="start"
+            android:gravity="end"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/calc_display_expr"
+            android:textSize="13sp" />
 
         <!-- Main Display / Current Value -->
         <TextView
             android:id="@+id/txt_calc_result"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_height="wrap_content"
             android:ellipsize="start"
-            android:gravity="end|center_vertical"
+            android:gravity="end"
             android:maxLines="1"
-            android:singleLine="true"
             android:text="0"
             android:textColor="@color/calc_display_val"
             android:textSize="26sp"
@@ -69,7 +50,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3.9"
+        android:layout_weight="5"
         android:orientation="vertical">
 
         <!-- ROW 1: AC, ±, %, ÷ -->
@@ -85,7 +66,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginEnd="3dp"
+                android:layout_marginEnd="4dp"
                 android:background="@drawable/widget_calc_btn_action"
                 android:gravity="center"
                 android:text="AC"
@@ -103,7 +84,7 @@
                 android:gravity="center"
                 android:text="±"
                 android:textColor="@color/calc_btn_action_text"
-                android:textSize="16sp"
+                android:textSize="17sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -124,7 +105,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginStart="3dp"
+                android:layout_marginStart="4dp"
                 android:background="@drawable/widget_calc_btn_op"
                 android:gravity="center"
                 android:text="÷"
@@ -146,12 +127,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginEnd="3dp"
+                android:layout_marginEnd="4dp"
                 android:background="@drawable/widget_calc_btn_num"
                 android:gravity="center"
                 android:text="7"
                 android:textColor="@color/calc_btn_num_text"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -164,7 +145,7 @@
                 android:gravity="center"
                 android:text="8"
                 android:textColor="@color/calc_btn_num_text"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -177,7 +158,7 @@
                 android:gravity="center"
                 android:text="9"
                 android:textColor="@color/calc_btn_num_text"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -185,7 +166,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginStart="3dp"
+                android:layout_marginStart="4dp"
                 android:background="@drawable/widget_calc_btn_op"
                 android:gravity="center"
                 android:text="×"
@@ -207,12 +188,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginEnd="3dp"
+                android:layout_marginEnd="4dp"
                 android:background="@drawable/widget_calc_btn_num"
                 android:gravity="center"
                 android:text="4"
                 android:textColor="@color/calc_btn_num_text"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -225,7 +206,7 @@
                 android:gravity="center"
                 android:text="5"
                 android:textColor="@color/calc_btn_num_text"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -238,7 +219,7 @@
                 android:gravity="center"
                 android:text="6"
                 android:textColor="@color/calc_btn_num_text"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -246,7 +227,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginStart="3dp"
+                android:layout_marginStart="4dp"
                 android:background="@drawable/widget_calc_btn_op"
                 android:gravity="center"
                 android:text="−"
@@ -268,12 +249,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginEnd="3dp"
+                android:layout_marginEnd="4dp"
                 android:background="@drawable/widget_calc_btn_num"
                 android:gravity="center"
                 android:text="1"
                 android:textColor="@color/calc_btn_num_text"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -286,7 +267,7 @@
                 android:gravity="center"
                 android:text="2"
                 android:textColor="@color/calc_btn_num_text"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -299,7 +280,7 @@
                 android:gravity="center"
                 android:text="3"
                 android:textColor="@color/calc_btn_num_text"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -307,7 +288,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginStart="3dp"
+                android:layout_marginStart="4dp"
                 android:background="@drawable/widget_calc_btn_op"
                 android:gravity="center"
                 android:text="+"
@@ -328,12 +309,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginEnd="3dp"
+                android:layout_marginEnd="4dp"
                 android:background="@drawable/widget_calc_btn_num"
                 android:gravity="center"
                 android:text="0"
                 android:textColor="@color/calc_btn_num_text"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -346,7 +327,7 @@
                 android:gravity="center"
                 android:text="."
                 android:textColor="@color/calc_btn_num_text"
-                android:textSize="17sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -367,12 +348,12 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginStart="3dp"
+                android:layout_marginStart="4dp"
                 android:background="@drawable/widget_calc_btn_eq"
                 android:gravity="center"
                 android:text="="
                 android:textColor="@color/calc_btn_eq_text"
-                android:textSize="20sp"
+                android:textSize="19sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
