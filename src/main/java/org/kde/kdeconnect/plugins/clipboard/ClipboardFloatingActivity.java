@@ -43,23 +43,16 @@ public class ClipboardFloatingActivity extends AppCompatActivity {
         getWindow().setAttributes(wlp);
     }
 
-    @Override
-    protected void onResume() {
-        super.onResume();
-        // When in onResume, this activity is in foreground, granting Clipboard access
-        ClipboardListener.instance(this).onClipboardChanged();
-        if (shouldShowToast()) {
-            Toast.makeText(this, R.string.pref_plugin_clipboard_sent, Toast.LENGTH_SHORT).show();
-        }
-        finish();
-        overridePendingTransition(0, 0);
-    }
+
 
     @Override
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
         if (hasFocus) {
             ClipboardListener.instance(this).onClipboardChanged();
+            if (shouldShowToast()) {
+                Toast.makeText(this, R.string.pref_plugin_clipboard_sent, Toast.LENGTH_SHORT).show();
+            }
             finish();
             overridePendingTransition(0, 0);
         }

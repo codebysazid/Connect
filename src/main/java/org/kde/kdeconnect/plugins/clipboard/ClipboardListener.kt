@@ -75,7 +75,20 @@ class ClipboardListener private constructor(ctx: Context) {
                             if (line.contains("org.kde.kdeconnect") || line.contains(BuildConfig.APPLICATION_ID)) {
                                 try {
                                     val intent = ClipboardFloatingActivity.getIntent(context, false)
-                                    context.startActivity(intent)
+                                    val options = android.app.ActivityOptions.makeBasic()
+                                    if (Build.VERSION.SDK_INT >= 34) {
+                                        options.setPendingIntentBackgroundActivityStartMode(
+                                            android.app.ActivityOptions.MODE_BACKGROUND_ACTIVITY_START_ALLOWED
+                                        )
+                                    }
+                                    // Use PendingIntent to bypass BAL on Android 14+
+                                    val pendingIntent = android.app.PendingIntent.getActivity(
+                                        context, 
+                                        0, 
+                                        intent, 
+                                        android.app.PendingIntent.FLAG_UPDATE_CURRENT or android.app.PendingIntent.FLAG_IMMUTABLE
+                                    )
+                                    pendingIntent.send(context, 0, null, null, null, null, options.toBundle())
                                 } catch (e: Exception) {
                                     Log.e("ClipboardListener", "Error starting ClipboardFloatingActivity", e)
                                 }
