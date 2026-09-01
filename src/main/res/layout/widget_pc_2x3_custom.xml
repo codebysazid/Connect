@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_m3_card_background"
+    android:orientation="vertical"
+    android:padding="12dp">
+
+    <!-- ==================== HEADER (Device Name Center-Aligned & Battery) ==================== -->
+    <LinearLayout
+        android:id="@+id/row_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingBottom="6dp">
+
+        <!-- Left: Device Icon -->
+        <ImageView
+            android:id="@+id/img_device_icon"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:src="@drawable/ic_device_laptop_32dp"
+            android:tint="@color/m3_widget_on_surface" />
+
+        <!-- Center: Device Name (Centered) -->
+        <TextView
+            android:id="@+id/txt_device_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="6dp"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Laptop"
+            android:textColor="@color/m3_widget_on_surface"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <!-- Right: Battery Badge -->
+        <TextView
+            android:id="@+id/txt_battery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/widget_m3_button_background"
+            android:paddingHorizontal="7dp"
+            android:paddingVertical="3dp"
+            android:text="⚡ --"
+            android:textColor="@color/m3_widget_on_secondary_container"
+            android:textSize="11sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp" />
+
+    <!-- ==================== BUTTON 1: VIEW ==================== -->
+    <LinearLayout
+        android:id="@+id/btn_view_monitor"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/widget_m3_button_background"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="14dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_screen_share"
+            android:tint="@color/m3_widget_on_secondary_container" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="View"
+            android:textColor="@color/m3_widget_on_secondary_container"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- ==================== BUTTON 2: LOCK PC ==================== -->
+    <LinearLayout
+        android:id="@+id/btn_lock"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginBottom="6dp"
+        android:background="@drawable/widget_m3_button_background"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="14dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_lock"
+            android:tint="@color/m3_widget_on_secondary_container" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Lock PC"
+            android:textColor="@color/m3_widget_on_secondary_container"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- ==================== BUTTON 3: SHARE FILES ==================== -->
+    <LinearLayout
+        android:id="@+id/btn_share_files"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@drawable/widget_m3_button_background"
+        android:clickable="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="14dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_baseline_send_24"
+            android:tint="@color/m3_widget_on_secondary_container" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Share Files"
+            android:textColor="@color/m3_widget_on_secondary_container"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+</LinearLayout>

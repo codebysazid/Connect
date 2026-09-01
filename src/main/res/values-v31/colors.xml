@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Material You Dynamic Monet Wallpaper Colors (Android 12+) -->
+    <color name="m3_widget_surface">@android:color/system_neutral1_900</color>
+    <color name="m3_widget_on_surface">@android:color/system_neutral1_100</color>
+    <color name="m3_widget_secondary_container">@android:color/system_accent2_800</color>
+    <color name="m3_widget_on_secondary_container">@android:color/system_accent2_100</color>
+
+</resources>
