@@ -60,8 +60,8 @@ internal fun updateClockWidget(
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
         val viewMapping = mapOf(
-            SizeF(140f, 70f) to compactViews,
-            SizeF(240f, 120f) to expandedViews
+            SizeF(100f, 100f) to compactViews,
+            SizeF(180f, 120f) to expandedViews
         )
         appWidgetManager.updateAppWidget(appWidgetId, RemoteViews(viewMapping))
     } else {

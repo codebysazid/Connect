@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/transparent"
-    android:padding="6dp">
+    android:padding="4dp">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -21,21 +21,21 @@
             android:format24Hour="HH mm"
             android:gravity="center"
             android:includeFontPadding="false"
-            android:letterSpacing="0.04"
+            android:letterSpacing="0.02"
             android:singleLine="true"
             android:textColor="#59FFFFFF"
-            android:textSize="64sp"
+            android:textSize="46sp"
             android:textStyle="bold" />
 
         <!-- ==================== SPARKLE STAR ACCENT ==================== -->
         <ImageView
             android:id="@+id/img_clock_sparkle"
-            android:layout_width="26dp"
-            android:layout_height="26dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:layout_alignBottom="@id/txt_clock_bg_time"
             android:layout_alignStart="@id/txt_clock_bg_time"
-            android:layout_marginStart="4dp"
-            android:layout_marginBottom="4dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginBottom="2dp"
             android:src="@drawable/ic_star_sparkle_glow" />
 
         <!-- ==================== FOREGROUND LAYER: DAY & DATE ==================== -->
@@ -58,9 +58,9 @@
                 android:shadowColor="#B3000000"
                 android:shadowDx="0"
                 android:shadowDy="2"
-                android:shadowRadius="8"
+                android:shadowRadius="6"
                 android:textColor="#FFFFFF"
-                android:textSize="28sp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
             <!-- Date (e.g. "29 August 2026") -->
@@ -68,7 +68,7 @@
                 android:id="@+id/txt_clock_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
+                android:layout_marginTop="1dp"
                 android:format12Hour="d MMMM yyyy"
                 android:format24Hour="d MMMM yyyy"
                 android:gravity="center"
@@ -76,9 +76,9 @@
                 android:shadowColor="#B3000000"
                 android:shadowDx="0"
                 android:shadowDy="1"
-                android:shadowRadius="6"
+                android:shadowRadius="4"
                 android:textColor="#F2F2F2"
-                android:textSize="13sp"
+                android:textSize="11sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </RelativeLayout>
