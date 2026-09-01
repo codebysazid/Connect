@@ -264,7 +264,7 @@ SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted
 
         <receiver
             android:name="org.kde.kdeconnect.plugins.customwidget.Custom2x3WidgetProvider"
-            android:label="KDE Connect 2x3 Control"
+            android:label="Connect 2x3 Control"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -280,7 +280,7 @@ SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted
 
         <receiver
             android:name="org.kde.kdeconnect.plugins.customwidget.CalculatorWidgetProvider"
-            android:label="Calculator Widget"
+            android:label="Calculator"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
@@ -296,7 +296,7 @@ SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted
 
         <receiver
             android:name="org.kde.kdeconnect.plugins.customwidget.AestheticClockWidgetProvider"
-            android:label="Aesthetic Clock Widget"
+            android:label="Aesthetic Clock"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />

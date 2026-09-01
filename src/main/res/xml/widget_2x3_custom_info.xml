@@ -11,7 +11,7 @@
     android:maxResizeHeight="600dp"
     android:updatePeriodMillis="0"
     android:initialLayout="@layout/widget_pc_2x3_custom"
+    android:previewLayout="@layout/widget_pc_2x3_custom"
     android:resizeMode="horizontal|vertical"
     android:widgetCategory="home_screen"
-    android:previewImage="@drawable/remotecommand_widget_preview"
     />
