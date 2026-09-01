@@ -13,6 +13,7 @@ import android.content.Context
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.core.content.ContextCompat
 import org.kde.kdeconnect.helpers.ThreadHelper.execute
 import org.kde.kdeconnect_tp.BuildConfig
@@ -22,7 +23,7 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-class ClipboardListener {
+class ClipboardListener private constructor(ctx: Context) {
     enum class ClipboardContentType {
         Text,
         Password,
@@ -34,7 +35,7 @@ class ClipboardListener {
 
     private val observers: HashSet<ClipboardObserver> = HashSet()
 
-    private val context: Context
+    private val context: Context = ctx.applicationContext
     var currentContent: String? = null
         private set
     var currentContentType: ClipboardContentType = ClipboardContentType.Text
@@ -43,33 +44,59 @@ class ClipboardListener {
         private set
 
     private lateinit var cm: ClipboardManager
+    @Volatile
+    private var isLogcatRunning = false
 
-    private constructor(ctx: Context) {
-        context = ctx.applicationContext
+    init {
         Handler(Looper.getMainLooper()).post {
             cm = ContextCompat.getSystemService(context, ClipboardManager::class.java)!!
             cm.addPrimaryClipChangedListener { this.onClipboardChanged() }
         }
+        startLogcatListenerIfNeeded()
+    }
+
+    fun startLogcatListenerIfNeeded() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q && ClipboardPlugin.canSyncAutomatically(context)) {
+            if (isLogcatRunning) return
+            isLogcatRunning = true
             execute {
-                try {
-                    val timeStamp = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US).format(Date())
-                    // Listen only ClipboardService errors after now
-                    val logcatFilter = if (Build.VERSION.SDK_INT > Build.VERSION_CODES.VANILLA_ICE_CREAM) { "E ClipboardService" } else { "ClipboardService:E" }
-                    val process = Runtime.getRuntime().exec(arrayOf<String>("logcat", "-T", timeStamp, logcatFilter, "*:S"))
-                    val bufferedReader = BufferedReader(InputStreamReader(process.inputStream))
-                    bufferedReader.forEachLine { line ->
-                        if (line.contains(BuildConfig.APPLICATION_ID)) {
-                            context.startActivity(ClipboardFloatingActivity.getIntent(context, false))
+                while (isLogcatRunning) {
+                    try {
+                        val timeStamp = SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS", Locale.US).format(Date())
+                        val process = Runtime.getRuntime().exec(arrayOf(
+                            "logcat",
+                            "-b", "system",
+                            "-T", timeStamp,
+                            "ClipboardService:E",
+                            "*:S"
+                        ))
+                        val bufferedReader = BufferedReader(InputStreamReader(process.inputStream))
+                        bufferedReader.forEachLine { line ->
+                            if (line.contains("org.kde.kdeconnect") || line.contains(BuildConfig.APPLICATION_ID)) {
+                                try {
+                                    val intent = ClipboardFloatingActivity.getIntent(context, false)
+                                    context.startActivity(intent)
+                                } catch (e: Exception) {
+                                    Log.e("ClipboardListener", "Error starting ClipboardFloatingActivity", e)
+                                }
+                            }
                         }
+                    } catch (e: Exception) {
+                        Log.e("ClipboardListener", "Logcat stream error", e)
                     }
-                } catch (_: Exception) { }
+                    try {
+                        Thread.sleep(1000)
+                    } catch (_: InterruptedException) {
+                        break
+                    }
+                }
             }
         }
     }
 
     fun registerObserver(observer: ClipboardObserver) {
         observers.add(observer)
+        startLogcatListenerIfNeeded()
     }
 
     fun removeObserver(observer: ClipboardObserver) {
@@ -78,7 +105,10 @@ class ClipboardListener {
 
     fun onClipboardChanged() {
         try {
-            val clip = cm.primaryClip!!
+            if (!this::cm.isInitialized) {
+                cm = ContextCompat.getSystemService(context, ClipboardManager::class.java) ?: return
+            }
+            val clip = cm.primaryClip ?: return
             val item = clip.getItemAt(0)
             val content = item.coerceToText(context).toString()
             val contentType = detectContentType(clip)
@@ -94,7 +124,7 @@ class ClipboardListener {
                 observer.clipboardChanged(content, contentType)
             }
         } catch (_: Exception) {
-            //Probably clipboard was not text
+            // Probably clipboard was not text
         }
     }
 
@@ -113,7 +143,6 @@ class ClipboardListener {
 
         @JvmStatic
         fun instance(context: Context): ClipboardListener {
-            // FIXME: The _instance we return won't be completely initialized yet since initialization happens on a new thread (why?)
             return _instance ?: ClipboardListener(context).also { _instance = it }
         }
 
