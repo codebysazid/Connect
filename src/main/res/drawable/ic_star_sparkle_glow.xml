@@ -1,0 +1,18 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="36dp"
+    android:height="36dp"
+    android:viewportWidth="36"
+    android:viewportHeight="36">
+    <!-- Outer Glow Layer -->
+    <path
+        android:fillColor="#805C9DFF"
+        android:pathData="M18,2 C18,10.84 25.16,18 34,18 C25.16,18 18,25.16 18,34 C18,25.16 10.84,18 2,18 C10.84,18 18,10.84 18,2 Z" />
+    <!-- Mid Soft Glow -->
+    <path
+        android:fillColor="#B390CAF9"
+        android:pathData="M18,6 C18,12.63 23.37,18 30,18 C23.37,18 18,23.37 18,30 C18,23.37 12.63,18 6,18 C12.63,18 18,12.63 18,6 Z" />
+    <!-- Inner Core Crisp White -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M18,11 C18,14.87 21.13,18 25,18 C21.13,18 18,21.13 18,25 C18,21.13 14.87,18 11,18 C14.87,18 18,14.87 18,11 Z" />
+</vector>
