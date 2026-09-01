@@ -7,4 +7,17 @@
     <color name="m3_widget_secondary_container">@android:color/system_accent2_800</color>
     <color name="m3_widget_on_secondary_container">@android:color/system_accent2_100</color>
 
+    <!-- Calculator Widget Dynamic Colors -->
+    <color name="calc_widget_bg">#D9151518</color>
+    <color name="calc_btn_num_bg">@android:color/system_neutral2_800</color>
+    <color name="calc_btn_num_text">@android:color/system_neutral1_100</color>
+    <color name="calc_btn_action_bg">@android:color/system_neutral2_700</color>
+    <color name="calc_btn_action_text">@android:color/system_neutral1_100</color>
+    <color name="calc_btn_op_bg">@android:color/system_accent2_700</color>
+    <color name="calc_btn_op_text">@android:color/system_accent2_100</color>
+    <color name="calc_btn_eq_bg">@android:color/system_accent1_600</color>
+    <color name="calc_btn_eq_text">@android:color/system_accent1_100</color>
+    <color name="calc_display_expr">@android:color/system_neutral2_200</color>
+    <color name="calc_display_val">@android:color/system_neutral1_100</color>
+
 </resources>
