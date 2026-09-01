@@ -3,9 +3,9 @@
     android:id="@+id/clock_widget_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
+    android:background="@drawable/widget_clock_cal_bg"
     android:orientation="vertical"
-    android:padding="4dp">
+    android:padding="8dp">
 
     <!-- ==================== TOP SECTION: AESTHETIC CLOCK ==================== -->
     <RelativeLayout
@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:clickable="true"
         android:gravity="center"
-        android:paddingVertical="2dp"
+        android:paddingVertical="4dp"
         android:layout_marginBottom="4dp">
 
         <!-- Background Faded Time -->
@@ -35,7 +35,7 @@
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:singleLine="true"
-                android:textColor="#55FFFFFF"
+                android:textColor="@color/clock_faded_time"
                 android:textSize="36sp"
                 android:textStyle="bold" />
 
@@ -52,7 +52,7 @@
                 android:gravity="center"
                 android:includeFontPadding="false"
                 android:singleLine="true"
-                android:textColor="#55FFFFFF"
+                android:textColor="@color/clock_faded_time"
                 android:textSize="36sp"
                 android:textStyle="bold" />
         </LinearLayout>
@@ -65,7 +65,7 @@
             android:layout_alignBottom="@id/layout_bg_time"
             android:layout_alignStart="@id/layout_bg_time"
             android:layout_marginStart="-4dp"
-            android:layout_marginBottom="1dp"
+            android:layout_marginBottom="2dp"
             android:src="@drawable/ic_star_sparkle_glow" />
 
         <!-- Foreground Day & Date -->
@@ -89,7 +89,7 @@
                 android:shadowDy="2"
                 android:shadowRadius="6"
                 android:singleLine="true"
-                android:textColor="#FFFFFF"
+                android:textColor="@color/clock_day_text"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -107,11 +107,19 @@
                 android:shadowDy="1"
                 android:shadowRadius="4"
                 android:singleLine="true"
-                android:textColor="#F5F5F7"
+                android:textColor="@color/clock_date_text"
                 android:textSize="10sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </RelativeLayout>
+
+    <!-- Subtle Accent Separator -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#15FFFFFF"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginBottom="4dp" />
 
     <!-- ==================== BOTTOM SECTION: FULL MONTHLY CALENDAR ==================== -->
     <LinearLayout
@@ -130,84 +138,17 @@
             android:orientation="horizontal"
             android:paddingBottom="2dp">
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Sun"
-                android:textColor="#90FFFFFF"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Mon"
-                android:textColor="#90FFFFFF"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Tue"
-                android:textColor="#90FFFFFF"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Wed"
-                android:textColor="#90FFFFFF"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Thu"
-                android:textColor="#90FFFFFF"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Fri"
-                android:textColor="#90FFFFFF"
-                android:textSize="10sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="Sat"
-                android:textColor="#90FFFFFF"
-                android:textSize="10sp"
-                android:textStyle="bold" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Sun" android:textColor="@color/cal_header_color" android:textSize="10sp" android:textStyle="bold" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Mon" android:textColor="@color/cal_header_color" android:textSize="10sp" android:textStyle="bold" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Tue" android:textColor="@color/cal_header_color" android:textSize="10sp" android:textStyle="bold" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Wed" android:textColor="@color/cal_header_color" android:textSize="10sp" android:textStyle="bold" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Thu" android:textColor="@color/cal_header_color" android:textSize="10sp" android:textStyle="bold" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Fri" android:textColor="@color/cal_header_color" android:textSize="10sp" android:textStyle="bold" />
+            <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="Sat" android:textColor="@color/cal_header_color" android:textSize="10sp" android:textStyle="bold" />
         </LinearLayout>
 
         <!-- ROW 0 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:layout_marginVertical="1dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal" android:layout_marginVertical="1dp">
             <TextView android:id="@+id/cal_d00" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginHorizontal="1dp" android:gravity="center" android:textSize="11sp" android:textStyle="bold" />
             <TextView android:id="@+id/cal_d01" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginHorizontal="1dp" android:gravity="center" android:textSize="11sp" android:textStyle="bold" />
             <TextView android:id="@+id/cal_d02" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginHorizontal="1dp" android:gravity="center" android:textSize="11sp" android:textStyle="bold" />
@@ -218,12 +159,7 @@
         </LinearLayout>
 
         <!-- ROW 1 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:layout_marginVertical="1dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal" android:layout_marginVertical="1dp">
             <TextView android:id="@+id/cal_d10" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginHorizontal="1dp" android:gravity="center" android:textSize="11sp" android:textStyle="bold" />
             <TextView android:id="@+id/cal_d11" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginHorizontal="1dp" android:gravity="center" android:textSize="11sp" android:textStyle="bold" />
             <TextView android:id="@+id/cal_d12" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginHorizontal="1dp" android:gravity="center" android:textSize="11sp" android:textStyle="bold" />
@@ -234,12 +170,7 @@
         </LinearLayout>
 
         <!-- ROW 2 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:layout_marginVertical="1dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal" android:layout_marginVertical="1dp">
             <TextView android:id="@+id/cal_d20" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginHorizontal="1dp" android:gravity="center" android:textSize="11sp" android:textStyle="bold" />
             <TextView android:id="@+id/cal_d21" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginHorizontal="1dp" android:gravity="center" android:textSize="11sp" android:textStyle="bold" />
             <TextView android:id="@+id/cal_d22" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginHorizontal="1dp" android:gravity="center" android:textSize="11sp" android:textStyle="bold" />
@@ -250,12 +181,7 @@
         </LinearLayout>
 
         <!-- ROW 3 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:layout_marginVertical="1dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal" android:layout_marginVertical="1dp">
             <TextView android:id="@+id/cal_d30" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginHorizontal="1dp" android:gravity="center" android:textSize="11sp" android:textStyle="bold" />
             <TextView android:id="@+id/cal_d31" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginHorizontal="1dp" android:gravity="center" android:textSize="11sp" android:textStyle="bold" />
             <TextView android:id="@+id/cal_d32" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginHorizontal="1dp" android:gravity="center" android:textSize="11sp" android:textStyle="bold" />
@@ -266,12 +192,7 @@
         </LinearLayout>
 
         <!-- ROW 4 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:layout_marginVertical="1dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal" android:layout_marginVertical="1dp">
             <TextView android:id="@+id/cal_d40" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginHorizontal="1dp" android:gravity="center" android:textSize="11sp" android:textStyle="bold" />
             <TextView android:id="@+id/cal_d41" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginHorizontal="1dp" android:gravity="center" android:textSize="11sp" android:textStyle="bold" />
             <TextView android:id="@+id/cal_d42" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginHorizontal="1dp" android:gravity="center" android:textSize="11sp" android:textStyle="bold" />
@@ -282,12 +203,7 @@
         </LinearLayout>
 
         <!-- ROW 5 -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:layout_marginVertical="1dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1" android:orientation="horizontal" android:layout_marginVertical="1dp">
             <TextView android:id="@+id/cal_d50" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginHorizontal="1dp" android:gravity="center" android:textSize="11sp" android:textStyle="bold" />
             <TextView android:id="@+id/cal_d51" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginHorizontal="1dp" android:gravity="center" android:textSize="11sp" android:textStyle="bold" />
             <TextView android:id="@+id/cal_d52" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:layout_marginHorizontal="1dp" android:gravity="center" android:textSize="11sp" android:textStyle="bold" />

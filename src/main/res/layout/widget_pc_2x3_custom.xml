@@ -5,9 +5,9 @@
     android:layout_height="match_parent"
     android:background="@drawable/widget_m3_card_background"
     android:orientation="vertical"
-    android:padding="12dp">
+    android:padding="9dp">
 
-    <!-- ==================== HEADER (Device Name Center-Aligned & Battery) ==================== -->
+    <!-- ==================== HEADER (Device Icon, Centered Device Name, Battery Pill) ==================== -->
     <LinearLayout
         android:id="@+id/row_header"
         android:layout_width="match_parent"
@@ -19,44 +19,45 @@
         <!-- Left: Device Icon -->
         <ImageView
             android:id="@+id/img_device_icon"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
             android:src="@drawable/ic_device_laptop_32dp"
             android:tint="@color/m3_widget_on_surface" />
 
-        <!-- Center: Device Name (Centered) -->
+        <!-- Center: Device Name -->
         <TextView
             android:id="@+id/txt_device_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:layout_marginHorizontal="6dp"
+            android:layout_marginHorizontal="4dp"
             android:gravity="center"
             android:textAlignment="center"
             android:ellipsize="end"
             android:maxLines="1"
+            android:singleLine="true"
             android:text="Laptop"
             android:textColor="@color/m3_widget_on_surface"
-            android:textSize="13sp"
+            android:textSize="12sp"
             android:textStyle="bold" />
 
-        <!-- Right: Battery Badge -->
+        <!-- Right: Battery Badge Pill -->
         <TextView
             android:id="@+id/txt_battery"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/widget_m3_button_background"
-            android:paddingHorizontal="7dp"
-            android:paddingVertical="3dp"
+            android:paddingHorizontal="6dp"
+            android:paddingVertical="2dp"
             android:text="⚡ --"
             android:textColor="@color/m3_widget_on_secondary_container"
-            android:textSize="11sp"
+            android:textSize="10sp"
             android:textStyle="bold" />
     </LinearLayout>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="4dp" />
+        android:layout_height="2dp" />
 
     <!-- ==================== BUTTON 1: VIEW ==================== -->
     <LinearLayout
@@ -64,25 +65,27 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginBottom="6dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/widget_m3_button_background"
         android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="14dp">
+        android:paddingHorizontal="10dp">
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
             android:src="@drawable/ic_screen_share"
             android:tint="@color/m3_widget_on_secondary_container" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
             android:ellipsize="end"
             android:maxLines="1"
+            android:singleLine="true"
             android:text="View"
             android:textColor="@color/m3_widget_on_secondary_container"
             android:textSize="13sp"
@@ -95,25 +98,27 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_marginBottom="6dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/widget_m3_button_background"
         android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="14dp">
+        android:paddingHorizontal="10dp">
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
             android:src="@drawable/ic_lock"
             android:tint="@color/m3_widget_on_secondary_container" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
             android:ellipsize="end"
             android:maxLines="1"
+            android:singleLine="true"
             android:text="Lock PC"
             android:textColor="@color/m3_widget_on_secondary_container"
             android:textSize="13sp"
@@ -130,20 +135,22 @@
         android:clickable="true"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="14dp">
+        android:paddingHorizontal="10dp">
 
         <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
             android:src="@drawable/ic_baseline_send_24"
             android:tint="@color/m3_widget_on_secondary_container" />
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:ellipsize="end"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:ellipsize="none"
             android:maxLines="1"
+            android:singleLine="true"
             android:text="Share Files"
             android:textColor="@color/m3_widget_on_secondary_container"
             android:textSize="13sp"
