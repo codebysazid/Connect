@@ -4,11 +4,13 @@
     <!-- Material You Dynamic Monet Wallpaper Colors (Android 12+) -->
     <color name="m3_widget_surface">@android:color/system_neutral1_900</color>
     <color name="m3_widget_on_surface">@android:color/system_neutral1_100</color>
-    <color name="m3_widget_secondary_container">@android:color/system_accent2_800</color>
-    <color name="m3_widget_on_secondary_container">@android:color/system_accent2_100</color>
+    <color name="m3_widget_secondary_container">@android:color/system_accent1_800</color>
+    <color name="m3_widget_on_secondary_container">@android:color/system_accent1_100</color>
 
     <!-- Calculator Widget Dynamic Colors -->
-    <color name="calc_widget_bg">#D9151518</color>
+    <color name="calc_widget_bg">#E6151518</color>
+    <color name="calc_border">@android:color/system_accent1_800</color>
+    <color name="calc_display_bg">@android:color/system_accent2_900</color>
     <color name="calc_btn_num_bg">@android:color/system_neutral2_800</color>
     <color name="calc_btn_num_text">@android:color/system_neutral1_100</color>
     <color name="calc_btn_action_bg">@android:color/system_neutral2_700</color>
@@ -19,5 +21,18 @@
     <color name="calc_btn_eq_text">@android:color/system_accent1_100</color>
     <color name="calc_display_expr">@android:color/system_neutral2_200</color>
     <color name="calc_display_val">@android:color/system_neutral1_100</color>
+
+    <!-- Aesthetic Clock & Calendar Dynamic Colors -->
+    <color name="clock_faded_time">@android:color/system_accent1_100</color>
+    <color name="clock_star_outer">@android:color/system_accent1_600</color>
+    <color name="clock_star_mid">@android:color/system_accent1_300</color>
+    <color name="clock_star_core">@android:color/system_neutral1_100</color>
+    <color name="clock_day_text">@android:color/system_neutral1_100</color>
+    <color name="clock_date_text">@android:color/system_accent2_100</color>
+    <color name="cal_header_color">@android:color/system_accent2_200</color>
+    <color name="cal_today_bg">@android:color/system_accent1_300</color>
+    <color name="cal_today_text">@android:color/system_accent1_900</color>
+    <color name="cal_date_color">@android:color/system_neutral1_100</color>
+    <color name="cal_dimmed_date_color">@android:color/system_neutral2_600</color>
 
 </resources>

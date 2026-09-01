@@ -10,7 +10,9 @@
     <color name="m3_widget_on_secondary_container">#E8DEF8</color>
 
     <!-- Calculator Widget Colors -->
-    <color name="calc_widget_bg">#D9151518</color>
+    <color name="calc_widget_bg">#E6151518</color>
+    <color name="calc_border">#26FFFFFF</color>
+    <color name="calc_display_bg">#1AFFFFFF</color>
     <color name="calc_btn_num_bg">#2C2C33</color>
     <color name="calc_btn_num_text">#FFFFFF</color>
     <color name="calc_btn_action_bg">#3D3D48</color>
@@ -21,5 +23,18 @@
     <color name="calc_btn_eq_text">#FFFFFF</color>
     <color name="calc_display_expr">#9E9EAE</color>
     <color name="calc_display_val">#FFFFFF</color>
+
+    <!-- Aesthetic Clock & Calendar Colors -->
+    <color name="clock_faded_time">#55FFFFFF</color>
+    <color name="clock_star_outer">#805C9DFF</color>
+    <color name="clock_star_mid">#B390CAF9</color>
+    <color name="clock_star_core">#FFFFFF</color>
+    <color name="clock_day_text">#FFFFFF</color>
+    <color name="clock_date_text">#F5F5F7</color>
+    <color name="cal_header_color">#90FFFFFF</color>
+    <color name="cal_today_bg">#A8C7FA</color>
+    <color name="cal_today_text">#101C2E</color>
+    <color name="cal_date_color">#FFFFFF</color>
+    <color name="cal_dimmed_date_color">#44FFFFFF</color>
 
 </resources>

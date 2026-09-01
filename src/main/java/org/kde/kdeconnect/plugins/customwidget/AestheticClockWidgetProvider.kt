@@ -11,12 +11,12 @@ import android.appwidget.AppWidgetManager
 import android.appwidget.AppWidgetProvider
 import android.content.Context
 import android.content.Intent
-import android.graphics.Color
 import android.net.Uri
 import android.os.Build
 import android.provider.AlarmClock
 import android.util.SizeF
 import android.widget.RemoteViews
+import androidx.core.content.ContextCompat
 import org.kde.kdeconnect_tp.BuildConfig
 import org.kde.kdeconnect_tp.R
 import java.util.Calendar
@@ -110,9 +110,9 @@ internal fun updateClockWidget(
     expandedViews.setOnClickPendingIntent(R.id.layout_clock_section_expanded, clockPendingIntent)
     expandedViews.setOnClickPendingIntent(R.id.layout_calendar_section_expanded, calPendingIntent)
 
-    // 2. Populate Full Monthly Calendar Grid
-    populateCalendar(compactViews)
-    populateCalendar(expandedViews)
+    // 2. Populate Full Monthly Calendar Grid with Dynamic Accent
+    populateCalendar(context, compactViews)
+    populateCalendar(context, expandedViews)
 
     // 3. Update Widget with Multi-Size Support
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
@@ -126,7 +126,7 @@ internal fun updateClockWidget(
     }
 }
 
-private fun populateCalendar(views: RemoteViews) {
+private fun populateCalendar(context: Context, views: RemoteViews) {
     val now = Calendar.getInstance()
     val todayDay = now.get(Calendar.DAY_OF_MONTH)
 
@@ -144,6 +144,10 @@ private fun populateCalendar(views: RemoteViews) {
 
     val startOffset = firstDayOfWeek - 1 // 0 for Sunday start
 
+    val todayTextColor = ContextCompat.getColor(context, R.color.cal_today_text)
+    val activeDateColor = ContextCompat.getColor(context, R.color.cal_date_color)
+    val dimmedDateColor = ContextCompat.getColor(context, R.color.cal_dimmed_date_color)
+
     var cellIndex = 0
     for (row in 0 until 6) {
         for (col in 0 until 7) {
@@ -152,25 +156,25 @@ private fun populateCalendar(views: RemoteViews) {
                 // Previous month's trailing days (dimmed)
                 val dayNum = daysInPrevMonth - startOffset + cellIndex + 1
                 views.setTextViewText(cellId, dayNum.toString())
-                views.setTextColor(cellId, Color.parseColor("#44FFFFFF"))
+                views.setTextColor(cellId, dimmedDateColor)
                 views.setInt(cellId, "setBackgroundResource", 0)
             } else if (cellIndex < startOffset + daysInCurrentMonth) {
                 // Current month's days
                 val dayNum = cellIndex - startOffset + 1
                 views.setTextViewText(cellId, dayNum.toString())
                 if (dayNum == todayDay) {
-                    // Today's prominent soft-blue pill badge!
+                    // Today's prominent soft pill badge (dynamic wallpaper accent!)
                     views.setInt(cellId, "setBackgroundResource", R.drawable.cal_today_badge)
-                    views.setTextColor(cellId, Color.parseColor("#101C2E"))
+                    views.setTextColor(cellId, todayTextColor)
                 } else {
                     views.setInt(cellId, "setBackgroundResource", 0)
-                    views.setTextColor(cellId, Color.parseColor("#FFFFFF"))
+                    views.setTextColor(cellId, activeDateColor)
                 }
             } else {
                 // Next month's leading days (dimmed)
                 val dayNum = cellIndex - startOffset - daysInCurrentMonth + 1
                 views.setTextViewText(cellId, dayNum.toString())
-                views.setTextColor(cellId, Color.parseColor("#44FFFFFF"))
+                views.setTextColor(cellId, dimmedDateColor)
                 views.setInt(cellId, "setBackgroundResource", 0)
             }
             cellIndex++
