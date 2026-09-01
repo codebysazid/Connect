@@ -27,12 +27,12 @@
     <color name="clock_star_outer">@android:color/system_accent1_600</color>
     <color name="clock_star_mid">@android:color/system_accent1_300</color>
     <color name="clock_star_core">@android:color/system_neutral1_100</color>
-    <color name="clock_day_text">@android:color/system_neutral1_100</color>
-    <color name="clock_date_text">@android:color/system_accent2_100</color>
-    <color name="cal_header_color">@android:color/system_accent2_200</color>
+    <color name="clock_day_text">#FFFFFF</color>
+    <color name="clock_date_text">#F5F5F7</color>
+    <color name="cal_header_color">#99FFFFFF</color>
     <color name="cal_today_bg">@android:color/system_accent1_300</color>
     <color name="cal_today_text">@android:color/system_accent1_900</color>
-    <color name="cal_date_color">@android:color/system_neutral1_100</color>
-    <color name="cal_dimmed_date_color">@android:color/system_neutral2_600</color>
+    <color name="cal_date_color">#FFFFFF</color>
+    <color name="cal_dimmed_date_color">#50FFFFFF</color>
 
 </resources>

@@ -31,10 +31,10 @@
     <color name="clock_star_core">#FFFFFF</color>
     <color name="clock_day_text">#FFFFFF</color>
     <color name="clock_date_text">#F5F5F7</color>
-    <color name="cal_header_color">#90FFFFFF</color>
+    <color name="cal_header_color">#99FFFFFF</color>
     <color name="cal_today_bg">#A8C7FA</color>
     <color name="cal_today_text">#101C2E</color>
     <color name="cal_date_color">#FFFFFF</color>
-    <color name="cal_dimmed_date_color">#44FFFFFF</color>
+    <color name="cal_dimmed_date_color">#50FFFFFF</color>
 
 </resources>
