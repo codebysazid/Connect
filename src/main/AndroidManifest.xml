@@ -262,6 +262,19 @@ SPDX-License-Identifier: GPL-2.0-only OR GPL-3.0-only OR LicenseRef-KDE-Accepted
                 android:resource="@xml/remotecommandplugin_widget" />
         </receiver>
 
+        <activity
+            android:name="org.kde.kdeconnect.plugins.customwidget.Custom2x3WidgetConfigActivity"
+            android:excludeFromRecents="true"
+            android:label="Connect 2x3 Control"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:screenOrientation="user"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
         <receiver
             android:name="org.kde.kdeconnect.plugins.customwidget.Custom2x3WidgetProvider"
             android:label="Connect 2x3 Control"

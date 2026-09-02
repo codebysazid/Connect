@@ -9,9 +9,10 @@
     android:minResizeHeight="70dp"
     android:maxResizeWidth="450dp"
     android:maxResizeHeight="600dp"
-    android:updatePeriodMillis="0"
+    android:updatePeriodMillis="1800000"
     android:initialLayout="@layout/widget_pc_2x3_custom"
     android:previewLayout="@layout/widget_pc_2x3_custom"
     android:resizeMode="horizontal|vertical"
     android:widgetCategory="home_screen"
+    android:configure="org.kde.kdeconnect.plugins.customwidget.Custom2x3WidgetConfigActivity"
     />
